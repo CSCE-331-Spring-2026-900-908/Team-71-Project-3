@@ -1,9 +1,37 @@
 import Image from "next/image";
+import { auth0 } from "@/lib/auth0";
 
-export default function Home() {
+export default async function Home() {
+  // Check if user is authenticated
+  const session = await auth0.getSession();
+
+  if (!session) {
+    return (
+      <>
+        {/* Redirects to Auth0 to sign up */}
+        <a href="/auth/login?screen_hint=signup">Signup</a>
+        <br />
+        {/* Redirects to Auth0 to log in */}
+        <a href="/auth/login">Login</a>
+      </>
+    );
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <>
+      <p>Logged in as {session.user.email}</p>
+
+    {/* <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <h1>Herro</h1>
-    </div>
+    </div> */}
+
+      {/* Display user info (name, email, etc.) */}
+      <h1>User Profile</h1>
+      <pre>{JSON.stringify(session.user, null, 2)}</pre>
+
+      {/* Ends the session and redirects to Auth0 to log out */}
+      <a href="/auth/logout">Logout</a>
+    </>
   );
 }
+
