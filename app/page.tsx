@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { auth0 } from "@/lib/auth0";
 
+/*
+import { Pool } from "pg";
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+*/
+
 export default async function Home() {
   // Check if user is authenticated
   const session = await auth0.getSession();
@@ -36,4 +44,36 @@ export default async function Home() {
     </>
   );
 }
+
+/*
+  const user = session.user;
+
+  const result = await pool.query(
+    `SELECT role
+     FROM users
+     WHERE auth0_user_id = $1`,
+    [user.sub]
+  );
+
+  if (result.rows.length === 0) {
+    redirect("/unauthorized");
+  }
+
+  const role = result.rows[0].role;
+
+  if (role === "manager") {
+    redirect("/manager");
+  }
+
+  if (role === "cashier") {
+    redirect("/cashier");
+  }
+
+  if (role === "customer") {
+    redirect("/customer");
+  }
+
+  redirect("/unauthorized");
+}
+*/
 
