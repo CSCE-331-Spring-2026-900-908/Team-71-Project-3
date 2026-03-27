@@ -32,7 +32,7 @@ DELETE - Remove data
 // If you would like all of the drink names, set singular to false. (ex: .../drinks/?singular=false)
 export async function GET(request: Request) {
   try {
-    // TODO: read query params or fetch data
+    // TODO: test
 
     const url = new URL(request.url);
     const singular = url.searchParams.get("singular");
@@ -69,9 +69,11 @@ export async function GET(request: Request) {
 // Include key values pairs for id, name, ice, sweetness, milk, boba, popping_boba, price
 export async function POST(request: Request) {
   try {
+    // TODO: test
+
     const body = await request.json();
 
-    const result = await pool.query(
+    await pool.query(
       "INSERT INTO drink VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
       [
         body.id,
