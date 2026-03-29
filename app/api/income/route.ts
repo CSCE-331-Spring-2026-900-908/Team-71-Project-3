@@ -25,14 +25,13 @@ PATCH  - Update part of resource
 DELETE - Remove data
 */
 
-// This function queries the database for the income per month given a time frame,
+// This function queries the database for the income per month from sales given a time frame,
 // Uses Query parameter
 // For use, please indicate the desired time frame using key value pairs for startDate, and endDate
 // startDate (YYYY-MM-DD) endDate (YYYY-MM-DD). (ex: .../income/?startYear=2026-03-01&endDate=2026-04-23)
 // If want all time data, set allTime to true (ex: .../income/?allTime=true)
 export async function GET(request: Request) {
   try {
-    // TODO: Test
 
     const url = new URL(request.url);
 

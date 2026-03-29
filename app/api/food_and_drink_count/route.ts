@@ -32,7 +32,6 @@ DELETE - Remove data
 // If want all time data, set allTime to true (ex: .../food_and_drink_count/?allTime=true)
 export async function GET(request: Request) {
   try {
-    // TODO: Test
 
     const url = new URL(request.url);
 
