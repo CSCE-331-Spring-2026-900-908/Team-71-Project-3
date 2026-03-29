@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { pool } from "@/lib/db"; //to connect  to out db
+import { auth0 } from "@/lib/auth0";
 
 /*
 HTTP Status Codes

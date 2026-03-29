@@ -24,6 +24,7 @@ PATCH  - Update part of resource
 DELETE - Remove data
 */
 
+// get user info
 export async function GET(request: Request) {
   const session = await auth0.getSession();
 
