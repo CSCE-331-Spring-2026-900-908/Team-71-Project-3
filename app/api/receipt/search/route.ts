@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { pool } from "@/lib/db";
+import { pool } from "@/lib/db"; //to connect  to out db
 import { auth0 } from "@/lib/auth0";
 
 /*
@@ -25,7 +25,7 @@ DELETE - Remove data
 */
 
 // will return all table lines the match the parameter enetered, 
-// searches by any of the attributes in the inventory table
+// searches by any of the attributes of the receipt table
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -37,13 +37,16 @@ export async function GET(request: Request) {
 
     const result = await pool.query(
       `
-      SELECT * FROM inventory
+      SELECT * FROM receipt
       WHERE
         CAST(id AS TEXT) ILIKE $1
-        OR CAST(amount AS TEXT) ILIKE $1
-        OR name ILIKE $1
-        OR supplier_name ILIKE $1
-        OR supplier_contact ILIKE $1
+        OR CAST(customer_id AS TEXT) ILIKE $1
+        OR CAST(cashier_id AS TEXT) ILIKE $1
+        OR CAST(purchase_date AS TEXT) ILIKE $1
+        OR CAST(tax AS TEXT) ILIKE $1
+        OR CAST(discount AS TEXT) ILIKE $1
+        OR payment_method ILIKE $1
+        OR CAST(z_closed AS TEXT) ILIKE $1
       `,
       [`%${q}%`]
     );
@@ -52,7 +55,7 @@ export async function GET(request: Request) {
   } catch (err) {
     console.error(err);
     return Response.json(
-      { error: "Failed to search inventory" },
+      { error: "Failed to search receipt table" },
       { status: 500 }
     );
   }
