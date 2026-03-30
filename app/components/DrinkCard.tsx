@@ -18,19 +18,20 @@ export default function ProductCard({
   onCustomize,
 }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-md border-2 border-[#00A67E] p-4 flex flex-col h-full relative">
+    <div className="bg-white ">
       {/* Product Image */}
+      
       <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-3">
         <Image src={imageUrl} alt={name} fill className="object-cover" />
       </div>
 
       {/* Text Info */}
-      <h3 className="text-2xl font-semibold mb-1">{name}</h3>
+      <h3 className="text-(--dark) text-2xl font-semibold mb-1">{name}</h3>
       <p className="text-gray-600 text-sm flex-grow mb-4">{description}</p>
       
       {/* Price and Add Button */}
       <div className="flex justify-between items-center mt-auto">
-        <span className="text-xl font-bold">${price.toFixed(2)}</span>
+        <span className="text-(--dark) text-xl font-bold">${price.toFixed(2)}</span>
         <button 
           onClick={onCustomize} 
           className="bg-[#00A67E] text-white rounded-full p-2 hover:scale-105 active:scale-95 transition-all shadow-md"

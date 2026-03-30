@@ -28,7 +28,7 @@ export default function OrderPage() {
     : menuItems.filter(item => item.category === activeTab);
 
   return (
-    <main className="p-8 bg-[#D2C1AF]">
+    <main className="p-8 ]">
       {/* Navigation Tabs */}
       <nav className="flex justify-center gap-8 mb-12 border-b border-gray-300">
         {categories.map((tab) => (
@@ -47,7 +47,7 @@ export default function OrderPage() {
       </nav>
 
       {/* Re-arranged Grid */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-4 gap-2">
         {filteredItems.map((item) => (
           <div key={item.id} className="bg-white p-4 rounded-2xl border-2 border-[#00A67E]">
             {/* Your Product Card Content */
@@ -56,7 +56,6 @@ export default function OrderPage() {
             {...item}
             onCustomize={() => setSelectedProduct(item)} // This opens the modal
           />}
-            <h3 className="font-bold">{item.name}</h3>
           </div>
         ))}
       </div>

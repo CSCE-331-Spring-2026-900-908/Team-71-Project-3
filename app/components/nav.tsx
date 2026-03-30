@@ -6,7 +6,7 @@ export default function NavBar() {
     "flex gap-2 text-white m-auto bg-(--primary) h-fit w-fit px-6 py-3 rounded-full";
   return (
     <nav className="w-full p-3 bg-transparent">
-      <div className="w-full bg-white flex justify-between gap-3 p-3 rounded-full">
+      <div className="w-full max-w-250 mx-auto bg-white flex justify-between gap-3 p-3 rounded-full">
         <Link
           href="/"
           className="my-auto h-fit w-fit hover:scale-105 active:scale-95"
