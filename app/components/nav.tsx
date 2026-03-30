@@ -8,7 +8,7 @@ export default function NavBar() {
     <nav className="w-full p-3 bg-transparent">
       <div className="w-full bg-white flex justify-between gap-3 p-3 rounded-full">
         <Link
-          href="\"
+          href="/"
           className="my-auto h-fit w-fit hover:scale-105 active:scale-95"
         >
           <Image
@@ -30,7 +30,7 @@ export default function NavBar() {
             />
             Login
           </Link>
-          <Link className={LinkStyle} href="/Order">
+          <Link className={LinkStyle} href="/POS/Order">
             <Image
               className="h-5 w-auto"
               src="/Cart.svg"
