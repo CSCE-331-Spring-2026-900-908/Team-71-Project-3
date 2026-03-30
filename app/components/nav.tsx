@@ -30,7 +30,7 @@ export default function NavBar() {
             />
             Login
           </Link>
-          <Link className={LinkStyle} href="/POS/Order">
+          <Link className={LinkStyle} href="/Order">
             <Image
               className="h-5 w-auto"
               src="/Cart.svg"

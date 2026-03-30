@@ -5,7 +5,7 @@ export default function Home() {
     <main className="min-h-screen text-black">
       {/* 2. Hero Title */}
       <header className="pt-32 pb-10 text-center">
-        <h1 className="text-6xl font-serif text-[##C4AF9A]">Boba shop</h1>
+        <h1 className="text-6xl font-serif">Boba shop</h1>
       </header>
 
       {/* 3. Content Sections */}
