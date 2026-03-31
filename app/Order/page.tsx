@@ -11,7 +11,7 @@ const menuItems = [
     name: "Brown Sugar Milk Tea",
     description: "Our signature boba with...",
     price: 5.5,
-    imageUrl: "/Template image.svg",
+    imageUrl: "/Template image.png",
     category: "Milk Tea",
   },
   {
@@ -19,7 +19,7 @@ const menuItems = [
     name: "Chicken Wings",
     description: "Crispy fried wings...",
     price: 8.99,
-    imageUrl: "/Template image.svg",
+    imageUrl: "/Template image.png",
     category: "Food",
   },
   // ... add more mock items to fill the 3x3 grid from image_1.png
